@@ -12,25 +12,25 @@
  * 
  */
 int main(int argc, char** argv){
-    int i, j, indiceMinimo, t;
+    int i, j, indiceMassimo, t;
     int v[N];
     
     for(i = 0; i < N; i++) {
         printf("Inserisci l'elemento %d : ", i);
         scanf("%d", &(v[i]));
     }
-    indiceMinimo = 0;
+    indiceMassimo = 0;
     for(i = 0; i < N; i++) {
-        indiceMinimo = i;
+        indiceMassimo = i;
         for(j = i + 1; j < N; j++) { 
-            if (v[indiceMinimo] < v[j]) {
-                indiceMinimo = j;
+            if (v[indiceMassimo] < v[j]) {
+                indiceMassimo = j;
             }
         }
-        if(j != indiceMinimo) {
+        if(j != indiceMassimo) {
             t = v[i];
-            v[i] = v[indiceMinimo];
-            v[indiceMinimo] = t;
+            v[i] = v[indiceMassimo];
+            v[indiceMassimo] = t;
         }
     }
     printf("Algoritmo ordinato (Select-Sort) : \n");
